@@ -1,0 +1,85 @@
+<template>
+  <div class="p-6 max-w-6xl mx-auto">
+    <!-- Search bar -->
+    <div class="mb-8">
+      <input
+        v-model="query"
+        placeholder="Start searching..."
+        class="w-full p-4 rounded-full border border-gray-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-400"
+      />
+    </div>
+
+    <!-- HERO BANNER -->
+<div
+  class="relative w-full rounded-3xl overflow-hidden shadow-md mb-12"
+>
+  <!-- Background Image -->
+  <img
+    src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1800&q=80"
+    alt="Culinary Club Banner"
+    class="w-full h-[380px] object-cover"
+  />
+
+  <!-- Gradient Overlay -->
+  <div
+    class="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-transparent"
+  ></div>
+
+  <!-- Text -->
+  <div class="absolute left-10 top-1/2 -translate-y-1/2 text-white">
+    <h1 class="text-5xl font-extrabold tracking-wide mb-4 drop-shadow-lg">
+      Club Culinaire
+    </h1>
+    <p class="text-lg max-w-xl leading-relaxed drop-shadow-md">
+      Discover carefully crafted dishes that blend flavor, creativity  
+      and inspiration — tailored for every cook.
+    </p>
+
+<!-- Button -->
+<button
+  class="mt-6 pl-4 pr-3 py-3 bg-white text-[#335B63] font-semibold rounded-3xl shadow-lg
+         flex items-center hover:bg-gray-100 transition tracking-wider gap-4"
+>
+  <span>EXPLORE MORE</span>
+
+  <!-- Arrow Capsule -->
+  <span
+    class="ml-auto w-12 h-12 rounded-2xl bg-[#335B63] text-white 
+           flex items-center justify-center text-2xl"
+  >
+    →
+  </span>
+</button>
+
+  </div>
+</div>
+
+
+    <!-- Title -->
+    <h1 class="text-3xl font-extrabold mb-6">
+      Looking for your favourite meal?
+    </h1>
+
+    <!-- Grid -->
+    <RecipeGrid :recipes="filteredRecipes" />
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref, computed, onMounted } from "vue";
+import { fetchRecipes, type Recipe } from "../services/recipesApi";
+import RecipeGrid from "../components/RecipeGrid.vue";
+
+const recipes = ref<Recipe[]>([]);
+const query = ref("");
+
+onMounted(async () => {
+  recipes.value = await fetchRecipes();
+});
+
+const filteredRecipes = computed(() =>
+  recipes.value.filter((r) =>
+    r.title.toLowerCase().includes(query.value.toLowerCase())
+  )
+);
+</script>
