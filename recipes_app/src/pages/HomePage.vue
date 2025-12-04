@@ -5,55 +5,44 @@
       <input
         v-model="query"
         placeholder="Start searching..."
-        class="w-full p-4 rounded-full border border-gray-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-400"
-      />
+        class="w-full p-4 rounded-full border border-gray-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-400" />
     </div>
 
     <!-- HERO BANNER -->
-<div
-  class="relative w-full rounded-3xl overflow-hidden shadow-md mb-12"
->
-  <!-- Background Image -->
-  <img
-    src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1800&q=80"
-    alt="Culinary Club Banner"
-    class="w-full h-[380px] object-cover"
-  />
+    <div class="relative w-full rounded-3xl overflow-hidden shadow-md mb-12">
+      <!-- Background Image -->
+      <img
+        src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1800&q=80"
+        alt="Culinary Club Banner"
+        class="w-full h-[380px] object-cover" />
 
-  <!-- Gradient Overlay -->
-  <div
-    class="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-transparent"
-  ></div>
+      <!-- Gradient Overlay -->
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-transparent"></div>
 
-  <!-- Text -->
-  <div class="absolute left-10 top-1/2 -translate-y-1/2 text-white">
-    <h1 class="text-5xl font-extrabold tracking-wide mb-4 drop-shadow-lg">
-      Club Culinaire
-    </h1>
-    <p class="text-lg max-w-xl leading-relaxed drop-shadow-md">
-      Discover carefully crafted dishes that blend flavor, creativity  
-      and inspiration — tailored for every cook.
-    </p>
+      <!-- Text -->
+      <div class="absolute left-10 top-1/2 -translate-y-1/2 text-white">
+        <h1 class="text-5xl font-extrabold tracking-wide mb-4 drop-shadow-lg">
+          Club Culinaire
+        </h1>
+        <p class="text-lg max-w-xl leading-relaxed drop-shadow-md">
+          Discover carefully crafted dishes that blend flavor, creativity and
+          inspiration — tailored for every cook.
+        </p>
 
-<!-- Button -->
-<button
-  class="mt-6 pl-4 pr-3 py-3 bg-white text-[#335B63] font-semibold rounded-3xl shadow-lg
-         flex items-center hover:bg-gray-100 transition tracking-wider gap-4"
->
-  <span>EXPLORE MORE</span>
+        <!-- Button -->
+        <button
+          class="mt-6 pl-4 pr-3 py-3 bg-white text-[#335B63] font-semibold rounded-3xl shadow-lg flex items-center hover:bg-gray-100 transition tracking-wider gap-4">
+          <span>EXPLORE MORE</span>
 
-  <!-- Arrow Capsule -->
-  <span
-    class="ml-auto w-12 h-12 rounded-2xl bg-[#335B63] text-white 
-           flex items-center justify-center text-2xl"
-  >
-    →
-  </span>
-</button>
-
-  </div>
-</div>
-
+          <!-- Arrow Capsule -->
+          <span
+            class="ml-auto w-12 h-12 rounded-2xl bg-[#335B63] text-white flex items-center justify-center text-2xl">
+            →
+          </span>
+        </button>
+      </div>
+    </div>
 
     <!-- Title -->
     <h1 class="text-3xl font-extrabold mb-6">

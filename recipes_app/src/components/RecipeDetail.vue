@@ -1,9 +1,13 @@
 <template>
-  <div v-if="recipe" class="rounded-2xl bg-white shadow-xl overflow-hidden flex flex-col">
+  <div
+    v-if="recipe"
+    class="rounded-2xl bg-white shadow-xl overflow-hidden flex flex-col">
     <img :src="image" class="h-64 w-full object-cover" />
 
     <div class="p-4 flex flex-col gap-2">
-      <button @click="$emit('back')" class="text-sm text-blue-500">← Back</button>
+      <button @click="$emit('back')" class="text-sm text-blue-500">
+        ← Back
+      </button>
 
       <h2 class="text-xl font-bold">{{ recipe.title }}</h2>
       <p class="text-gray-500 text-sm">{{ recipe.description }}</p>
@@ -25,7 +29,7 @@
 import { getRecipeImageUrl } from "../services/recipeImages";
 
 const props = defineProps({
-  recipe: Object
+  recipe: Object,
 });
 
 const image = getRecipeImageUrl(props.recipe, 800, 600);
