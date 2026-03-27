@@ -12,6 +12,32 @@ Vue.js follows the MVVM (Model–View–ViewModel) pattern:
 
 Vue = MVVM with reactive data binding
 
+### Example (ties it together)
+
+```js
+<script setup>
+import { ref, onMounted } from 'vue';
+
+const count = ref(0);        // state ref
+const inputEl = ref(null);   // DOM ref
+
+onMounted(() => {
+  console.log(count.value);      // state
+  inputEl.value.focus();         // DOM
+});
+</script>
+
+<template>
+  <input ref="inputEl" />
+  <button @click="count++">{{ count }}</button>
+</template>
+```
+
+#### Senior mental model
+
+- ref() → just a reactive box.
+- Template ref="x" → Vue fills that box with DOM/component
+
 ## 1. Options API vs Composition API
 
 Options API mainly structures component options.
