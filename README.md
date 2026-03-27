@@ -42,18 +42,20 @@ function increment() {
 
 ### 1.2. Reusable composable (shared logic)
 
+```js
 // useCounter.js
-import { ref } from 'vue'
+import { ref } from "vue";
 
 export function useCounter() {
-const count = ref(0)
+  const count = ref(0);
 
-function increment() {
-count.value++
-}
+  function increment() {
+    count.value++;
+  }
 
-return { count, increment }
+  return { count, increment };
 }
+```
 
 ## 2. Frameworks Timeline
 
